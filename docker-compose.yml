@@ -1,0 +1,11 @@
+# react dev server
+services:
+  react:
+    container_name: test_express_app
+    image: node:latest
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "3210:3210"
+    command: bash -c "npm install && node ."
