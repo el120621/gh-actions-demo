@@ -18,5 +18,6 @@ jobs:
       run: date +"%Y-%m-%d %H:%M:%S" > current_time.txt
 
     - name: Start app
+      working-directory: ${{ github.workspace }}
       run: docker-compose up
         
