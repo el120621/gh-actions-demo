@@ -1,0 +1,17 @@
+name: Create Timestamp
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  write-timestamp:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up current date and time
+      run: echo $(date +"%Y-%m-%d %H:%M:%S") > current_time.txt
