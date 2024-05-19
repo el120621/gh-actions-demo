@@ -19,5 +19,7 @@ jobs:
 
     - name: Start app
       working-directory: ${{ github.workspace }}
-      run: docker-compose up
+      run: |
+        docker-compose down --volumes
+        docker-compose up
         
